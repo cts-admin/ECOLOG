@@ -1,0 +1,11 @@
+SOURCES += Calc.py
+SOURCES += Dialog.py
+SOURCES += ECOLOG.py
+SOURCES += Export.py
+SOURCES += Import.py
+SOURCES += NMDS.py
+SOURCES += Report.py
+SOURCES += Sheet.py
+SOURCES += Useful.py
+SOURCES += Webservices.py
+TRANSLATIONS += ECOLOG_en.ts
