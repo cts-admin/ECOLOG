@@ -1,9 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#================================================================================#
-#  ECOLOG - Sistema Gerenciador de Banco de Dados para Levantamentos Ecológicos  #
-#        ECOLOG - Database Management System for Ecological Surveys              #
-#      Copyright (c) 1990-2016 Mauro J. Cavalcanti. All rights reserved.         #
+# ============================================================================== #
+#                               ECOLOG                                           #
+# ============================================================================== #
+#                                                                                #
+# Original Attribution:                                                          #
+#   Sistema Gerenciador de Banco de Dados para Levantamentos Ecológicos          #
+#   ECOLOG - Database Management System for Ecological Surveys                   #
+#   Mauro J. Cavalcanti.                                                         #
+#                                                                                #
+# ****************************************************************************** #
+# This copy of the software is now maintained by Conservation Technology         #
+# Solution Inc.                                                                  #
+# ****************************************************************************** #
 #                                                                                #
 #   Este programa é software livre; você pode redistribuí-lo e/ou                #
 #   modificá-lo sob os termos da Licença Pública Geral GNU, conforme             #
@@ -27,61 +36,12 @@
 #   the GNU General Public License for more details.                             #
 #                                                                                #
 #  Dependências / Dependencies:                                                  #
-#    Python 2.6+ (www.python.org)                                                #
-#    PyQt  4.8+ (www.riverbankcomputing.com/software/pyqt)                       #
+#    Python 3.6+ (www.python.org)                                                #
+#    PyQt  5.10.1+ (www.riverbankcomputing.com/software/pyqt)                    #
 #    formlayout 1.0+ (code.google.com/p/formlayout)                              #
-#    yaml 3.0+ (www.pyyaml.org)                                                  #
+#    PyYAML 4.1+ (www.pyyaml.org)                                                #
 #                                                                                #
-#  Histórico de Revisões / Revision History:                                     #
-#    Versão 5.0.0 "Aye-aye", 19/12/2014                                          #
-#       -- Utilização direta de planilhas eletrônicas                            #
-#          nos formatos do MS-Excel (xls, xlsx), OO-Calc (ods),                  #
-#          texto delimitado (csv, tsv) e Google Docs.                            #  
-#       -- Opções para análise de dados (inclusive análises multivariadas)       #
-#          e importação/exportação de dados de diferentes fontes e programas     #
-#          externos.                                                             #
-#    Versão 5.0.1 "Binturong", 22/12/2014                                        #
-#       -- Tradução para o inglês                                                #
-#       -- Correção de um erro que ocorria quando se tentava salvar um arquivo   # 
-#          (relatório ou dados) contendo caracteres acentuados no nome           #
-#       -- Vários aperfeiçoamentos menores e correção de pequenos erros          #  
-#    Versão 5.0.2 "Cachalot", 16/01/2015                                         #
-#       -- Implementação de uma correção cósmetica no quadro de diálogo para     #
-#          definição de filtros, onde os ícones correspondentes aos botões para  #
-#          incluir e excluir filtros não eram exibidos.                          #
-#       -- Inclusão no Manual do Usuário da lista das bibliotecas Python         # 
-#          necessárias para a execução do ECOLOG a partir do código-fonte        #
-#    Versão 5.0.3 "Dugong", 18/01/2015                                           #
-#       -- Correção de erros na geração de etiquetas e emissão de estatísticas   #
-#          de descritores                                                        #
-#    Versão 5.0.4 "Eland", 17/03/2015                                            #
-#       -- Gravação das configurações do programa em um arquivo INI              # 
-#       -- Ajuste no número de casas decimais dos valores e porcentagens         # 
-#          exibidas nos relatórios                                               #
-#    Versão 5.0.5 "Fennec", 11/03/2016                                           #
-#       -- Confirmação para inclusão de planilhas logo após a criação de um      #        
-#          novo projeto                                                          # 
-#       -- Correção de um erro que impedia a emissão de relatórios logo após     #
-#          a adição de planilhas a um projeto                                    #
-#       -- Correção na exibição das datas nas etiquetas de coleta                #
-#       -- Correção na exportação de dados para o formato Fitopac 2              #
-#       -- Correção na exportação de dados para o formato BRAHMS                 #
-#       -- Eliminação de espaços em branco dos nomes de espécies e famílias      #
-#          na emissão de relatórios e exportação de dados                        #
-#       -- Substituição do valor "None" por espaço em branco na exibição de      #
-#          planilhas do MS-Excel                                                 #
-#       -- Tratamento dos valores "cf.", "aff.", "var." e "subsp." nos nomes     #
-#          das espécies na emissão de relatórios                                 #
-#       -- Revisão do código-fonte para excluir bibliotecas redundantes          #
-#       -- Várias correções e ajustes no Manual do Usuário                       #
-#       -- Inclusão do Manual do Usuário no pacote de instalação                 #
-#    Versão 5.0.6 "Genet", 06/04/2016                                            #
-#       -- Iradução para o Espanhol                                              #
-#       -- Tratamento de erros na rotina de pesquisa de dados nomenclaturais     #
-#       -- Inclusão da busca de nomes suspeitos no relatório nomenclatural       #
-#       -- Cálculo do índice de qualidade taxonômica no relatório nomenclatural  #
-#       -- Atualização do Manual do Usuário                                      #
-#================================================================================#
+# ============================================================================== #
 
 import sys, time, os, platform, sqlite3, yaml
 from datetime import datetime
