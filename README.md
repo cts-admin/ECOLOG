@@ -14,3 +14,9 @@ E-mail: maurobio (at) gmail (dot) com
 
 You can support the original developer by making a donation thru the 
 [original project page](http://ecolog.sourceforge.net/).
+
+# Changelog
+
+#### Version 5.1
+- Added support for Python 3
+- Updated from PyQt4 to PyQt5 version 5.10.1+
