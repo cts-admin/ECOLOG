@@ -38,7 +38,6 @@
 #  Dependências / Dependencies:                                                  #
 #    Python 3.6+ (www.python.org)                                                #
 #    PyQt  5.10.1+ (www.riverbankcomputing.com/software/pyqt)                    #
-#    formlayout 1.0+ (code.google.com/p/formlayout)                              #
 #    PyYAML 4.1+ (www.pyyaml.org)                                                #
 #                                                                                #
 # ============================================================================== #
@@ -51,10 +50,8 @@ import time
 import yaml
 from datetime import datetime
 
-from PyQt4 import QtCore, QtGui
-from PyQt4.Qt import PYQT_VERSION_STR
-from PyQt4.QtCore import QT_VERSION_STR
-from formlayout import fedit
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtCore import QT_VERSION_STR
 from os.path import basename
 
 import Export
